@@ -20,77 +20,80 @@
         android:id="@+id/your_name_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Your Name"
-        android:inputType="textPersonName"
         android:layout_below="@id/logo_image"
-        android:layout_marginTop="0dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edittext_stroke"
+        android:drawableStart="@drawable/ic_person"
+        android:hint="    Your Name"
+        android:inputType="textPersonName"
         android:padding="10dp"
-        android:paddingStart="50dp"
-        />
+        android:paddingStart="30dp" />
 
     <!-- Index number field -->
     <EditText
         android:id="@+id/index_number_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Index Number"
-        android:inputType="number"
         android:layout_below="@id/your_name_field"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edittext_stroke"
+        android:drawableStart="@drawable/ic_id"
+        android:hint="    Index Number"
+        android:inputType="number"
         android:padding="10dp"
-        android:paddingStart="50dp"/>
+        android:paddingStart="30dp" />
 
     <!-- Email field -->
     <EditText
         android:id="@+id/email_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
         android:layout_below="@id/index_number_field"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edittext_stroke"
+        android:drawableStart="@drawable/ic_email"
+        android:hint="    Email"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
-        android:paddingStart="50dp"/>
+        android:paddingStart="30dp" />
 
     <!-- Password field -->
     <EditText
         android:id="@+id/password_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
         android:layout_below="@id/email_field"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edittext_stroke"
+        android:drawableStart="@drawable/ic_eye"
+        android:hint="    Password"
+        android:inputType="textPassword"
         android:padding="10dp"
-        android:paddingStart="50dp"
-        />
+        android:paddingStart="30dp" />
 
     <!-- Retype password field -->
     <EditText
         android:id="@+id/retype_password_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Retype Password"
-        android:inputType="textPassword"
         android:layout_below="@id/password_field"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edittext_stroke"
+        android:drawableStart="@drawable/ic_eye"
+        android:hint="    Retype Password"
+        android:inputType="textPassword"
         android:padding="10dp"
-        android:paddingStart="50dp"/>
+        android:paddingStart="30dp" />
 
     <!-- Submit button -->
     <Button
