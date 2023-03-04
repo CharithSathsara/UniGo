@@ -4,29 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 
 import java.util.List;
 
-import lk.madhack.unigo.model.Event;
+import lk.madhack.unigo.model.Subject;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UpcomingEvents extends AppCompatActivity {
+public class GetBictSubjects extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    RecyclerView bictRecyclerView;
     JsonPlaceHolderApi jsonPlaceHolderApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upcoming_events);
+        setContentView(R.layout.activity_get_bict_subjects);
 
         initViews();
 
@@ -37,33 +34,32 @@ public class UpcomingEvents extends AppCompatActivity {
 
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        getAllEvents();
+        getBictSubjects();
 
     }
 
-    public void getAllEvents() {
-
-        Call<List<Event>> call = jsonPlaceHolderApi.getAllEvents();
-        call.enqueue(new Callback<List<Event>>() {
+    private void getBictSubjects() {
+        Call<List<Subject>> call = jsonPlaceHolderApi.getBictSubjects();
+        call.enqueue(new Callback<List<Subject>>() {
             @Override
-            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+            public void onResponse(Call<List<Subject>> call, Response<List<Subject>> response) {
                 if(!response.isSuccessful()){
                     return;
                 }
-                EventsRecyclerViewAdapter myAdapter = new EventsRecyclerViewAdapter(UpcomingEvents.this,response.body());
-                recyclerView.setAdapter(myAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(UpcomingEvents.this));
+
+                BictRecyclerViewAdapter myAdapter = new BictRecyclerViewAdapter(GetBictSubjects.this, response.body());
+                bictRecyclerView.setAdapter(myAdapter);
+                bictRecyclerView.setLayoutManager(new LinearLayoutManager(GetBictSubjects.this));
             }
 
             @Override
-            public void onFailure(Call<List<Event>> call, Throwable t) {
+            public void onFailure(Call<List<Subject>> call, Throwable t) {
                 return;
             }
         });
-
     }
 
     private void initViews() {
-        recyclerView = findViewById(R.id.recyclerView);
+        bictRecyclerView = findViewById(R.id.bictRecyclerView);
     }
 }

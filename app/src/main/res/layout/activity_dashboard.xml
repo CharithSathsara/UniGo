@@ -5,30 +5,19 @@
 
     <ImageView
         android:id="@+id/profile_image"
-        android:layout_width="94dp"
-        android:layout_height="94dp"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/unilogo" />
 
-    <TextView
-        android:id="@+id/greeting_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="36dp"
-        android:layout_toRightOf="@id/profile_image"
-        android:text="Hello, Person name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
 
     <ScrollView
         android:background="@color/lightBlue"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/greeting_text"
+        android:layout_below="@id/profile_image"
         android:padding="26dp">
 
         <LinearLayout
@@ -37,6 +26,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewCourses"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -58,7 +48,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="My Courses"
+                        android:text="Courses"
                         android:textSize="20sp"
                         android:layout_gravity="center_vertical"
                         android:padding="16dp"
@@ -71,6 +61,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewEvents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
@@ -101,6 +92,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewAnnouncements"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp">
@@ -130,6 +122,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewClubs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"

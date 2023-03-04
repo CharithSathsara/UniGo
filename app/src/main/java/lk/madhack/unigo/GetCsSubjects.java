@@ -1,32 +1,33 @@
 package lk.madhack.unigo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 
+import java.util.Iterator;
 import java.util.List;
 
 import lk.madhack.unigo.model.Event;
+import lk.madhack.unigo.model.Subject;
+import lk.madhack.unigo.response.SubjectResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UpcomingEvents extends AppCompatActivity {
+public class GetCsSubjects extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    RecyclerView csRecyclerView;
     JsonPlaceHolderApi jsonPlaceHolderApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upcoming_events);
+        setContentView(R.layout.activity_get_cs_subjects);
 
         initViews();
 
@@ -37,33 +38,32 @@ public class UpcomingEvents extends AppCompatActivity {
 
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        getAllEvents();
-
+        getCsSubjects();
     }
 
-    public void getAllEvents() {
-
-        Call<List<Event>> call = jsonPlaceHolderApi.getAllEvents();
-        call.enqueue(new Callback<List<Event>>() {
+    private void getCsSubjects() {
+        Call<List<Subject>> call = jsonPlaceHolderApi.getCsSubjects();
+        call.enqueue(new Callback<List<Subject>>() {
             @Override
-            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+            public void onResponse(Call<List<Subject>> call, Response<List<Subject>> response) {
                 if(!response.isSuccessful()){
                     return;
                 }
-                EventsRecyclerViewAdapter myAdapter = new EventsRecyclerViewAdapter(UpcomingEvents.this,response.body());
-                recyclerView.setAdapter(myAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(UpcomingEvents.this));
+
+
+                CsRecyclerViewAdapter myAdapter = new CsRecyclerViewAdapter(GetCsSubjects.this, response.body());
+                csRecyclerView.setAdapter(myAdapter);
+                csRecyclerView.setLayoutManager(new LinearLayoutManager(GetCsSubjects.this));
             }
 
             @Override
-            public void onFailure(Call<List<Event>> call, Throwable t) {
+            public void onFailure(Call<List<Subject>> call, Throwable t) {
                 return;
             }
         });
-
     }
 
     private void initViews() {
-        recyclerView = findViewById(R.id.recyclerView);
+        csRecyclerView = findViewById(R.id.csRecyclerView);
     }
 }

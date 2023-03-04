@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Back button -->
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageView
+        android:src="@drawable/unilogo"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <!-- First CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewCS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/back_button"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="246dp"
+        android:elevation="4dp"
+        android:padding="16dp"
+
+        app:cardBackgroundColor="#A6CEF6"
+        app:cardCornerRadius="25dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:orientation="horizontal">
+
+            <!-- Course image -->
+            <ImageView
+                android:id="@+id/course_image1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/cs" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <!-- Course name -->
+
+                <!-- Course details -->
+                <TextView
+                    android:id="@+id/course_name1"
+                    android:layout_width="234dp"
+                    android:layout_height="53dp"
+                    android:text="Computer Science"
+                    android:textSize="24sp"
+                    android:textColor="@color/medBlue"
+                    android:textStyle="bold"
+                    app:drawableTint="@color/RoyalBlue" />
+
+                <TextView
+                    android:id="@+id/course_details1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Study of algorithms, programming, artificial intelligence to solve complex problems and improve technology."
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:drawableTint="#000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Second CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewBICT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardViewCS"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="26dp"
+        android:elevation="4dp"
+        android:padding="26dp"
+        app:cardBackgroundColor="#77E2EF"
+        app:cardCornerRadius="25dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:orientation="horizontal">
+
+            <!-- Course image -->
+            <ImageView
+                android:id="@+id/course_image2"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:padding="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/bit" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/course_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BICT"
+                    android:textSize="24sp"
+                    android:textColor="@color/medBlue"
+                    android:textStyle="bold" />
+
+                <!-- Course details -->
+                <TextView
+                    android:id="@+id/course_details2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ICT refers to digital technologies such as software, and the internet that enable faster and more efficient information processing."
+                    android:textColor="@color/black"
+                    android:layout_marginTop="16dp"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

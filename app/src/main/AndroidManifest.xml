@@ -12,9 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniGo"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".Dashboard"></activity>
-        <activity android:name=".Clubs"></activity>
+        <activity android:name=".GetBictSubjects"></activity>
+        <activity android:name=".GetCsSubjects" />
+        <activity android:name=".Courses" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".Clubs" />
         <activity android:name=".UpcomingEvents" />
         <activity android:name=".Announcements" />
         <activity android:name=".Login" />
