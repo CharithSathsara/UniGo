@@ -10,10 +10,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/Theme.UniGo"
         android:usesCleartextTraffic="true">
 
         <activity android:name=".Dashboard"></activity>
+=======
+        android:theme="@style/Theme.UniGo">
+        <activity android:name=".Clubs"></activity>
+        <activity android:name=".UpcomingEvents" />
+        <activity android:name=".Announcements" />
+        <activity android:name=".Dashboard" />
+>>>>>>> 710cdbf4ec73915cf63d4ca4caecb44948742eab
         <activity android:name=".Login" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainActivity">
