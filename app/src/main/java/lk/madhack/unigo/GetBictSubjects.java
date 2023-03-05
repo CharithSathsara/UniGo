@@ -28,7 +28,7 @@ public class GetBictSubjects extends AppCompatActivity {
         initViews();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.8.136:8080/")
+                .baseUrl("http://localhost:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
